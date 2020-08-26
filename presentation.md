@@ -39,11 +39,12 @@ params = {"objective": "binary",
 }
 ```
 #### Stratified K-FOLD 내부 교차검증
+
+![stratified](https://user-images.githubusercontent.com/61506233/91283490-a15cab80-e7c5-11ea-9774-0c762ac6074b.png)
+
 - 데이터가 편향되어있기때문에 단순 K-FOLD 교차검증을 사용하면 성능평가가 잘 되지 않을 수 있어 Stratified K-FOLD 내부 교차검증을 수행하였다.
 - 총 16번의 seed 값으로 학습을 돌려, 평균 값을 최종 예측 결과물로 사용
 - 시드값이 많을 수록 랜덤 요소로 인한 분산을 줄일 수 있음
-
-
 
 ### 2. XGBOOST
 ~~
