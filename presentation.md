@@ -5,15 +5,15 @@
 내일 해야지..
 
 ## Modeling
-
-### 1. LightGBM
-#### Feature Engineering
+### Feature Engineering
 - 파생변수 1 : 결측값 개수
 - 파생변수 2 : categorical data -> binaray data
   - 1)LabelEncoder()를 통해 numerical 변수
   - 2)OneHotEncoder()를 통해 고유값 별로 0/1의 binary 변수를 데이터로 사용
 - 파생변수 3 : ind 포함한 변수들 조합한 new_ind 생성
   - 조합, 빈도를 기반으로 파생변수 생성
+  
+### 1. LightGBM
 
 #### 파라미터 튜닝
 ```
@@ -23,7 +23,7 @@ min_data_in_leaf = 2000
 feature_fraction = 0.6
 num_boost_round = 10000
 params = {"objective": "binary",
-          "boosting_type": "gbdt", # dart도 돌려보자
+          "boosting_type": "gbdt", 
           "learning_rate": learning_rate,
           "num_leaves": num_leaves,
            "max_bin": 256,
@@ -38,6 +38,25 @@ params = {"objective": "binary",
           "subsample": 0.9
 }
 ```
+### 2. XGBOOST
+#### 파라미터 튜닝
+```
+ params = {'eta' : 0.025,
+                'gamma' : 9,
+                'max_depth' : 6,
+                'reg_lambda' : 1.2,
+                'colsample_bytree' : 1.0,
+                'min_child_weight' : 10,
+                'reg_alpha' : 8,
+                'scale_pos_weight' : 1.6,
+                'subsample' : 0.7,
+                'eval_metric' : 'auc',
+                'objective' : 'binary:logistic',
+                'seed' : 2017,
+                'silent' : False,
+                'tree_method' : 'gpu_hist'
+           }
+```
 #### Stratified K-FOLD 내부 교차검증
 
 ![stratified](https://user-images.githubusercontent.com/61506233/91283490-a15cab80-e7c5-11ea-9774-0c762ac6074b.png)
@@ -45,9 +64,7 @@ params = {"objective": "binary",
 - 데이터가 편향되어있기때문에 단순 K-FOLD 교차검증을 사용하면 성능평가가 잘 되지 않을 수 있어 Stratified K-FOLD 내부 교차검증을 수행하였다.
 - 총 16번의 seed 값으로 학습을 돌려, 평균 값을 최종 예측 결과물로 사용
 - 시드값이 많을 수록 랜덤 요소로 인한 분산을 줄일 수 있음
-
-### 2. XGBOOST
-~~
+                
 ### 3. Entity Embedding
 ~~
 ### 4. Neural Net
