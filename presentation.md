@@ -91,7 +91,7 @@ lightgbm 모델3개와 xgboost를 스태킹하여 메타데이터 생성, 최종
 1. calc 피처 삭제 
 2. null값 많은 피처 삭제 
 
-3.ps_cal_11_cat 피처 Mean Encoding 수행 : 
+3. ps_cal_11_cat 피처 Mean Encoding 수행 : 
 
   -Mean Encoding이란?
 
