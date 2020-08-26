@@ -56,7 +56,7 @@ params = {"objective": "binary",
 ### 1. Stacking
 lightgbm 모델3개와 xgboost를 스태킹하여 메타데이터 생성, 최종 메타 모델로는 LogisticRegression을 사용하였다.
 
-사용한 전처리로는 
+### 사용한 전처리
 1. calc 피처 삭제 
 2. null값 많은 피처 삭제 
 3.ps_cal_11_cat 피처 Mean Encoding 수행 : 
@@ -67,7 +67,7 @@ lightgbm 모델3개와 xgboost를 스태킹하여 메타데이터 생성, 최종
                기존 training data에서 0의 비율이 1보다 압도적으로 높으므로 기존의 불균형한 분포를 유지하기 위해 위와 같이 다운샘플링한 것 같다. 
 5. 카테고리 피처 더미 변수로 변환
 
-모델
+### 모델
 개별 모델들의 예측 결과로 새로운 학습데이터와 테스트데이터를 생성,
 최종 스태킹 모델에 학습시킨다.
 지니계수로는 2*auc-1 사용 (discussion)
