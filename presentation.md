@@ -11,7 +11,7 @@
 |-----|-------|--------|
 |single LightGBM|0.29090| 0.28536|
 |single XGBOOST|0.28947|0.28395|
-|single Neural Network|0.28186|0.27823|
+|Neural Network|0.28186|0.27823|
 |**Final Ensemble**|**0.29196**|**0.28673**|
 
 ## Feature Engineering
