@@ -24,6 +24,8 @@
   
 ## 1. LightGBM
 
+<img src="https://user-images.githubusercontent.com/61506233/91308489-4d17f280-e7ea-11ea-8b5d-c07b0b2c6bc6.png" width="40%">
+
 #### 파라미터 튜닝
 ```
 learning_rate = 0.1
@@ -49,6 +51,9 @@ params = {"objective": "binary",
 ```
 
 ## 2. XGBOOST
+
+<img src="https://user-images.githubusercontent.com/61506233/91308541-61f48600-e7ea-11ea-9840-4c0efbc9ed2d.png" width="40%">
+
 #### 파라미터 튜닝
 ```
  params = {'eta' : 0.025,
@@ -71,7 +76,7 @@ params = {"objective": "binary",
 
 #### Stratified K-FOLD 내부 교차검증
 
-![stratified](https://user-images.githubusercontent.com/61506233/91283490-a15cab80-e7c5-11ea-9774-0c762ac6074b.png)
+<img src="https://user-images.githubusercontent.com/61506233/91283490-a15cab80-e7c5-11ea-9774-0c762ac6074b.png" width="70%">
 
 - 데이터가 편향되어있기때문에 단순 K-FOLD 교차검증을 사용하면 성능평가가 잘 되지 않을 수 있어 Stratified K-FOLD 내부 교차검증을 수행하였다.
 - 총 16번의 seed 값으로 학습을 돌려, 평균 값을 최종 예측 결과물로 사용
