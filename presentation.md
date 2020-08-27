@@ -185,7 +185,7 @@ params = {"objective": "binary",
 
 - 데이터가 편향되어있기때문에 단순 K-FOLD 교차검증을 사용하면 성능평가가 잘 되지 않을 수 있어 Stratified K-FOLD 내부 교차검증을 수행하였다.
 - 총 16번의 seed 값으로 학습을 돌려, 평균 값을 최종 예측 결과물로 사용
-- 시드값이 많을 수록 랜덤 요소로 인한 분산을 줄일 수 있음
+- 시드값을 주어 랜덤 요소로 인한 분산을 줄임
                 
 ## 3. Entity Embedding & Neural Network
 
